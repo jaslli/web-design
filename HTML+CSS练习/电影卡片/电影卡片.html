@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影卡片</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        .outer {
+            width: 240px;
+            margin: 100px auto;
+            /* 设置阴影效果 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+
+        .img-wrapper img{
+            width: 100%;
+            /* 删除图片下的一点空白 */
+            vertical-align: bottom;
+        }
+
+        .info {
+            padding: 0 18px;
+            color:#acaaaa;
+            font-size: 14px;
+        }
+
+        .info .title {
+            color: #717171;
+            font-size: 18px;
+            margin: 13px 0 15px 0;
+        }
+
+        .info .intro {
+            margin-top: 18px;
+            line-height: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!--创建一个外层容器-->
+    <div class="outer">
+        <!--创建一个图片容器-->
+        <div class="img-wrapper">
+            <img src="./avatar.jpg" alt="">
+        </div>
+
+        <!-- 创建内容区容器 -->
+        <div class="info">
+            <h2 class="title">
+                动画电影
+            </h2>
+            <h3 class="category">
+                动画
+            </h3>
+            <p class="intro">
+                这是一部好看的电影。
+            </p>
+        </div>
+
+        <!-- 创建评分容器 -->
+        <div class="star-wrapper"></div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东轮播图</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .img-list {
+            width: 590px;
+            height: 470px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .img-list li {
+            position: absolute;
+        }
+
+        /* 修改元素的层级 */
+        .img-list li:nth-child(3) {
+            z-index: 2;
+        }
+
+        img {
+            width: 590px;
+            height: 470px;
+        }
+
+        .pointer {
+            position:absolute;
+            z-index: 9999;
+            bottom: 20px;
+            left: 40px;
+        }
+
+        .pointer a {
+            float: left;
+            /* display: block; */
+            width: 10px;
+            height: 10px;
+            background-color: aqua;
+            border-radius: 50%;
+            margin: 0px 4px;
+        }
+
+        .pointer a.active {
+            background: red;
+            text-shadow:2px;
+        }
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./2021-4-2top_img.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./avatar.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./icon.jpeg"></a></li>
+        <li><a href="javascript:;"><img src="./wallpaper.jpg"></a></li>
+
+        <div class="pointer">
+            <a class="active" href="javascript:;">
+            <a href="javascript:;">
+            <a href="javascript:;">
+            <a href="javascript:;">
+        </div>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title> 我的第一个网页 </title>
+</head>
+
+<body>
+    <!--  标题标签  -->
+    <h1>一级标签</h1>
+    <h2>二级标签</h2>
+    <h3>三级标签</h3>
+    <h4>四级标签</h4>
+    <h5>五级标签</h5>
+    <h6>六级标签</h6>
+    <!--  段落标签  -->
+    <p>1111111</p>
+    <p>2222222222</p>
+    <!--   换行标签 -->
+    <br/>
+    <!-- 水平线标签 -->
+    <hr/>
+
+    <strong>粗体标签</strong>
+    <em>斜体标签</em>
+    空&nbsp;格
+    大于号&gt;
+    小于号&lt;
+    版权符号&copy;
+
+    <!-- 图片标签 -->
+    <img src = "..." alt = "描述" title="悬停文字">
+
+    <!-- 链接标签
+        href 超链接的路径
+        target 打开的方式
+            _blank	在新窗口中打开被链接文档。
+            _self	默认。在相同的框架中打开被链接文档。
+            _parent	在父框架集中打开被链接文档。
+            _top	在整个窗口中打开被链接文档。
+            framename	在指定的框架中打开被链接文档。
+    -->
+    <a href="" target="">超链接</a>
+    <!-- 锚链接 使用name来作为标记，然后用#来回到名字处的链接-->
+    <a name = "top"></a>
+    <a href="#top">回到上一步</a>
+
+    <!-- 功能链接 -->
+    <a href="mailto:1141950370@qq.com">邮件联系</a>
+
+
+    <!--  有序列表  -->
+    <ol>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ol>
+
+    <!--  无序列表  -->
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+
+    <!--  自定义列表
+          dl 标签
+          dt 列表名称
+          dd 列表内容
+    -->
+    <dl>
+        <dl>标题</dl>
+        <dd>1111</dd>
+        <dd>2222</dd>
+    </dl>
+
+
+    <!--  表格
+          tr    行
+          td    列
+    -->
+    <table border="">
+        <!--  colspan跨列 跨几列  -->
+        <tr>
+            <td colspan="4">1-1</td>
+        </tr>
+        <tr>
+            <!--  rowspan跨行 跨几行  -->
+            <td rowspan="2">2-1</td>
+            <td>2-2</td>
+            <td>2-3</td>
+            <td>2-4</td>
+        </tr>
+        <tr>
+            <td>3-1</td>
+            <td>3-2</td>
+            <td>3-3</td>
+        </tr>
+    </table>
+
+
+    <!--    视频    -->
+    <!--
+        src         资源路径
+        controls    增加了一个视频控制条
+        autoplay    自动播放
+    -->
+    <video src="...." controls></video>
+
+    <!--    音频    -->
+    <!--
+        src         资源路径
+        controls    增加了一个视频控制条
+        autoplay    自动播放
+    -->
+    <video src="...." controls></video>
+
+
+    <!--  iframe内联框架
+          src   打开的网站
+    -->
+    <iframe src=""></iframe>
+
+
+    <!--    表单
+            method  请求方式
+            action  提交的请求地址
+    -->
+    <form method="post">
+        <!--    文本输入框 type为text
+                value   初始值
+                maxlength   文本框最长字符长度
+                size        文本框长度
+        -->
+        <p>用户名：<input type="text" name="username"> </input></p>
+        <!--    密码输入框 password -->
+        <p>密码：<input type="password" name="password"> </input></p>
+        <!--    单选框 type为radio
+                value   单选框的值
+                name    组
+                check   默认选中
+        -->
+        <p>
+            <input type="radio" value="boy" name="sex">男</input>
+            <input type="radio" value="girl" name="sex">女</input>
+        </p>
+
+        <!--    多选框 type为checkbox
+                value   单选框的值
+                name    组
+                check   默认选中
+        -->
+        <p>
+            <input type="checkbox" value="sleep" name="hobby">睡觉</input>
+            <input type="checkbox" value="play" name="hobby">玩</input>
+        </p>
+
+                <!--
+            button  普通按钮
+            image   图像按钮
+            submit  提交按钮
+            reset   重置按钮
+        -->
+        <P>
+            <input type="button" value="按钮" name="button"></input>
+            <input type="image" value="图片按钮" name="image"></input>
+        </P>
+        <p>
+            <input type="submit">提交</input>
+            <input type="reset">重置</input>
+        </p>
+
+        <!--    下拉框      -->
+        <p>
+            <select name="列表名称">
+                <option value="china">中国</option>
+                <option value="us">美国</option>
+            </select>
+        </p>
+
+
+        <!--    文本域  -->
+        <p>
+            <textarea name="textarea" cols="10" rows="10"></textarea>
+        </p>
+
+        <!--    文件域      -->
+        <P>
+            <input type="file" name="files"> 提交文件
+        </P>
+    </form>
+
+
+
+    <!--    CSS的样式导入方式
+            1. 行内样式。 在html标签中使用style属性，添加css属性即可，优先级最高
+            2. 内部样式。使用style标签，使用选择器指定标签，添加样式。
+            3. 外部样式。使用link标签，导入css文件样式。内部与外部的优先级比较谁先加载。
+    -->
+    <p style="color: aliceblue;">sss</p>
+    <!--
+    <style>
+        p{
+            color: #000;
+        }
+    </style>
+    <link rel="stylesheet" href="..."></link>
+    -->
+
+    <!--
+    1. 基本选择器。
+        1.1 标签选择器。让所有这个标签添加样式
+            p { }
+        1.2 类选择器。标签中的class属性，用.class添加样式
+            .class { }
+        1.3 id选择器。标签中的id属性，id全局唯一，类才能符用，用#id添加样式
+            #id { }
+        id > 类 > 标签
+    2. 层次选择器。
+        2.1 后代选择器。某个标签的后面的所有某个标签。
+        选择器 标签 { }
+        2.2 子选择器。某个标签的后面的子标签才有，子标签的子标签没有。
+        选择器>标签 { }
+        2.3 相邻兄弟选择器。某个选择器的下面一个标签（同级）
+        选择器 + 标签 { }
+        2.4 通用选择器。某个选择器选中的向下的所有同级元素。
+        选择器~标签 { }
+    3. 属性选中器。
+        选择器[属性]    选中选择元素并且带有指定属性的元素,比如
+        a[id = "first"] 选中a标签中带有id为first的元素
+        a.first         选中a标签中类名为first的元素
+        = 表示绝对等于
+        *= 表示包含这个元素
+        ^= 表示以这个属性值开头的元素
+        $= 表示以这个属性值结尾的元素
+    4. 伪类选择器（伪类表示特殊的位置）
+
+        某个选择器:first-child { }  选择选中标签的第一个子元素
+        某个选择器:last-child { }  选择选中标签的最后一个子元素
+        某个选择器:nth-child(n)
+        选择选中标签的第n个子元素，n是表示所有子元素，2n或者是oven表示有偶数子元素，2n+1或者是odd表示是奇数类的元素
+        这些的选择是根据全部子元素进行排序的。
+        first-of-type { }
+        last-of-type { }
+        nth-of-type { }
+        这三个伪类是根据同类子元素进行排序的
+
+        :not(:nth-of-type(3))  除了第三个标签之外的标签
+        :empty()                没有子元素的标签
+
+        常用的超链接的伪类
+        a:link      用来表示没访问过的链接
+        a:visited   用来表示访问过的链接
+        a:hover     鼠标接触标签的状态
+        a:active    鼠标按住a标签不松开的样式
+
+    5. 伪元素选择器(表示页面中一些特殊并不真实存在的元素)
+        ::first-letter     表示标签中的第一个字母
+        ::first-line       表示标签中的第一行
+        ::selection        表示选中的标签
+        这两个伪元素表示了元素的开始和最后，但是在两个位置是无法显示的，所以一般搭配content属性使用
+        ::before           表示元素的开始
+        ::after            表示元素的最后
+
+    6. 暂时的选择器
+        a, p                所有的a和p标签
+        a, .first           所有的a标签中的带有first类的元素
+        *                   所有元素
+        p*                  p中的所有元素
+    -->
+
+    <!--
+        为一个元素设置的样式同时也会应用到它的后代元素上，这叫做样式的继承
+        并不是所有的样式都会被继承，比如背景，布局相关的样式都不会被继承。
+    -->
+
+
+    <!--
+            字体样式
+        font-family     字体族，可以同时指定多个字体，用逗号隔开，首先用第一个，没有就第二个
+            字体的分类，表示一个大的分类，而不是微软雅黑这种具体的字体，浏览器会自动决定指定分类中的一种字体
+                1. serif        衬线字体
+                2. sans-serif   非衬线字体
+                3. monospace    等宽字体
+                4. cursive      草书字体
+            @font-face可以将服务器中的字体直接提供给用户去使用
+                @font-face {
+                    /* 指定字体的名字 */
+                    font-family: '',
+                    /* 指定服务器中字体的路径 */
+                    src: url();
+                }
+                1. 加载问题
+                2. 版权问题
+                    这个主要是不能自己加载来使用，比如微软雅黑，不能使用@font-face来指定引用
+                    只能在font-family属性上使用，因为font-family是建议你使用，如果你系统没有就不会使用，
+                    你提供下载的话就会涉及侵权问题。
+        color           设置字体颜色
+        font-size       字体大小
+        font-weight     字体的粗细
+        font            字体的样式（综合）
+        font 字体风格 字体粗细 字体大小/行高 字体族     行高可以省略不写，如果不写会使用默认值，而且会把之前的行高给覆盖掉
+    -->
+
+    <!--
+        图标字体（iconfont）
+            字体是矢量的，怎么放大不会失真，而且占用内存小，所以一些小的图标会使用字体来实现
+        fontawesome.com
+            1. 将css和webfonts移动到项目中（必须在同一级目录下）
+            2. 将all.css引入到网页中（link）
+            3. 使用图标字体
+                - 直接通过类名来使用图标字体,fas（或者是fab）是固定的，然后空格加图标名
+                    <i class="fas fa-bell"></i>
+                - 通过伪元素使用图标字体
+                    1. 通过before或者是after来选中
+                    2. 在content设置字体的编码（查）
+                    3. 设置字体的样式
+                        fab
+                        font-family: 'Font Awesome 5 Brands';
+                        fas
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                - 通过实体来使用图标字体
+                    1. 元素class设置为fas或者是fab
+                    2. &#x图标的编码
+                        <span class="fas"> &#xf0f3 </span>
+        阿里巴巴矢量图标库
+            1. 下载iconfont
+            2. 引入iconfont.css
+    -->
+
+    <!--
+            文本样式
+        text-align  文本对齐方式
+            1. left     左侧对齐
+            2. right    右侧对齐
+            3. center   居中对齐
+            4. justify  两端对齐
+        text-indent: 2em    首行缩进两个字母
+        background      背景颜色
+        height          高度
+        line-height     行高
+            - 行高指定是文字占有的实际高度
+            - 可以通过line-height来设置行高
+            - 字体框就算字体存在的各种，font-size实际上就算设置字体框的高度
+            - 行高会在字体框的上下平均分配
+            - 通常将行高和高度设置为一样的值，使单行文字在一个元素中垂直居中
+            - 行间距等于行高减去字体大小
+        text-decoration     划线
+            1. underline     下划线
+            2. line-through 中划线
+            3. overline     上划线
+            4. none         不用划线
+        vertical-align      设置元素垂直对齐的方式
+            1. baseline     默认值  基线对齐
+            2. top          顶部对齐
+            3. bottom       底部对齐
+            4. middle       居中对齐
+        white-space         设置网页如何处理空白
+            1. normal       默认，正常情况
+            2. nowrap       不换行（换行的相当于溢出）
+            3. pre          保留空白
+        text-overflow       处理文本溢出内容
+            ellipsis        文本溢出用省略号表示，配合overflow:hidden和white-space:nowrap来实现多余内容用省略号表示
+        text-shadow         阴影
+        text-shadow 阴影颜色 水平偏移 垂直偏移 阴影半径
+    -->
+
+    <!--
+            列表样式
+        list-style  列表的形式，none 无符号，circle 空心圆， decimal 数字， square 正方形
+        text-indent 文本缩进
+    -->
+
+    <!--
+            背景样式
+        background-color            背景颜色，可以同时设置背景颜色和背景图片
+        background-image: url()     添加背景图片，默认是平铺的方式
+        background-repeat           背景重复方式
+            1. repeat       默认值，背景会沿着x轴，y轴双方向重复
+            2. repeat-x     沿着x轴方向重复
+            3. repeat-y     沿着y轴方向重复
+            4. no-repeat    不重复
+        background-position         设置背景图片的位置
+            1. 通过 top left right bottom center   来设置背景图片的位置（可以两个合起来用）
+               必须使用两个值，如果只写了一个，第二个默认就是center
+            2. 通过偏移量来设置图片的位置
+                background-position 水平偏移量  垂直偏移量
+        background-clip     设置背景的范围
+            1. border-box   默认值，背景会出现在边框下面
+            2. padding-box  背景不会出现在边框，只出现在内容区和内边距
+            3. content-box  背景只会出现在内容区
+        background-origin   设置背景图片的偏移量计算的原点
+            1. padding-box  默认值，background-position从内边距处开始计算
+            2. content-box  背景图片的偏移量从内容区处计算
+            3. border-box   背景图片的变量从边框处开始计算
+        background-size     设置背景图片的大小
+            background-size 宽度 高度
+            1. cover    图片比例不变，将元素铺满
+            2. contain  图片比例不变，将图片在元素中完整显示
+        background-attachment   背景图片是否跟随元素移动
+            1. scroll   默认值，背景图片会跟随元素移动
+            2. fixed    背景会固定在页面中，不会跟着元素移动
+        background                  添加背景图片，比较综合
+        background 颜色，图片，图片的位置，平铺方式
+    -->
+
+
+    <!--
+            雪碧图
+        将多个小图片保存整合为一个大图片，然后通过
+        使用步骤：
+            1. 先确定要使用的图标
+            2. 测量图标的大小
+            3. 根据测量结果创建一个元素
+            4. 将雪碧图设置为元素的背景图片
+            5. 设置一个偏移量以显示正确的图片
+        1. 设置div的宽和高
+        2. 通过background-image来设置图片背景
+        3. 通过background-position偏移寻找正确的图片
+    -->
+
+    <!--
+        渐变可以实现从一个颜色向其他颜色过度
+            渐变是图片，需要通过background-image来设置
+        线性渐变，颜色沿着一条直线发生变化
+            linear-gradient()
+            还可以设置渐变的方向
+                to left     to right    to bottom   to top      xxxdeg  edg表示度数     turn    表示圈
+            background-image: linear-gradient(to right, red, yellow)
+        径向渐变，颜色放射性变化
+            radial-gradient()
+    -->
+
+    <!--
+        长度单位：
+            1. 像素。   同样的像素在不同的设备的显示效果是不一样的，像素大小不同。
+            2. 百分比。 设置为其父元素的百分比大小。
+            3. em。     根据元素的字体大小来计算，根据字体大小改变而改变。
+            4. rem。    根据根元素的字体大小来计算的。
+        颜色表示。
+            1. RGB值。
+                rgb(红色，绿色，蓝色)
+                每一种颜色的范围在0-255（0% - 100%）之间
+            2. RGBA值。
+                增加了a的不透明度。
+                rgba(红色，绿色，蓝色，不透明度)
+                0 表示完全透明，1表示完全不透明度，.5表示半透明
+            3. 十六进制的RGB值。
+                #红色绿色蓝色
+                颜色浓度区间    00-ff
+                两位重复可以简写为一位。
+    -->
+
+
+    <!--
+            盒子模型
+        CSS将页面中的所有元素都设置为了一个矩形的盒子
+        页面布局就算将不同的盒子摆放到不同的位置。
+
+            1. 内容区（content）
+                用width和height来设置宽度与高度
+            2. 边框（border）
+                至少需要设置三个样式。
+                边框的宽度  border-width    默认值为3px
+                border-width 上 右 下 左
+                边框的颜色  border-color    默认使用color值。
+                border-color 上 右 下 左
+                边框的样式  border-style
+                solid   实线    dotted  点状虚线    dashed  虚线    double  双线
+                border 宽度 样式 颜色   合起来写
+            3. 内边距（padding）
+                padding-top
+                padding-right
+                padding-bottom
+                padding-left
+                盒子的大小  内容区大小+内边距+边框大小
+                padding 上  右  下  左
+            4. 外边距（margin）
+                margin-top
+                margin-right
+                margin-bottom
+                margin-left
+    -->
+
+    <!--
+            盒子的尺寸
+        box-sizing属性  用来设置盒子尺寸的计算方式
+            content-box 默认值，宽度和高度用来设置内容区的大小
+            border-box  宽度和高度用来设置整个盒子的大小
+    -->
+
+    <!--
+            盒子的样式
+        outline     设置元素的轮廓
+            border是会影响盒子大小，会挤压其他元素
+            outline是在元素外围添加，不会影响大小，不会页面布局
+        box-shadow  设置元素的阴影效果，不会影响布局
+            box-shadow  水平偏移量 垂直偏移量 阴影模糊半径 颜色（一般指定透明度）
+            水平偏移量 水平位置偏移，正值向右移动，负值向左移动
+            垂直偏移量 垂直位置偏移，正值向下移动，负值向上移动
+        border-radius   设置圆角
+            border-top-left-radius  border-top-right-radius  border-bottom-left-radius  border-bottom-right-radius
+            设置一个值代表是圆角，两个不同的值为椭圆
+            border-radius: 左上 右上 右下 左下
+    -->
+
+    <!--
+        元素在水平方向的布局，有以下几个属性共同决定。
+            margin-left
+            border-left
+            padding-left
+            width
+            padding-right
+            border-right
+            margin-right
+            这七个值加起来应该要等于父元素的内容区的宽度，不相等则会调整margin-right到等式相等
+            要是这些值有一个值为auto，则会调整auto的值至等式相等
+    -->
+
+    <!--
+        元素在垂直方向的布局，有以下几个属性共同决定。
+            不设置高度就默认被内容区的大小撑开
+
+            若是子元素的高度大于了父元素的高度，子元素就会从父元素中溢出，
+            这时候会用overflow来处理溢出的子元素    overflow
+                visible 默认值  子元素溢出，在父元素外部的位置显示
+                hidden  溢出内容将会被裁剪不会显示
+                scroll  生成滚动条
+                auto    根据需要生成滚动条
+            overflow-x  水平溢出处理的属性
+            overflow-y  垂直溢出处理的属性
+
+            相邻的垂直方向的外边距会发生重叠的现象
+                兄弟元素    相邻垂直外边距会取两者的最大值（正值）
+                父子元素    父子元素间相邻外边距，子元素的会传递给父元素
+                            父子外边距的折叠会影响整体布局
+    -->
+
+    <!--
+        行内元素的盒子模型
+            行内元素不支持设置宽度和高度
+            行内元素设置padding, border, margin是不会影响布局的
+        display 用来设则元素显示的类型
+            inline  将元素设置为行内元素
+            block   将元素设置为块元素
+            inline-block    将元素设置为行内块元素
+            table   将元素设置为一个表格
+            none    元素不在页面中显示,且不占据位置
+        visibility
+            visible 默认值，元素在页面中正常显示
+            hidden  元素在页面中隐藏，还是会占据位置
+    -->
+
+    <!--
+            浮动
+        通过浮动可以使一个元素向其父元素的左侧或者右侧移动
+            使用float属性来设置浮动
+                none    默认值，元素不浮动
+                left    向左浮动
+                right   向右浮动
+            元素设置浮动之后，水平布局的等式就可以不满足了。
+            元素设置浮动之后，会完全从文档流中脱离，不再占用文档流的位置，
+                所以之后的元素会重新挤上来
+            浮动元素不会盖住文字，文字会自动环绕再元素周围，用来设置文字环绕图片效果
+            浮动主要是让元素水平放置，制作一些水平方向的布局
+            块元素脱离文档流后，块元素不在独占页面一行，块元素宽度高度默认被内容撑开
+            行内元素脱离文档流后变成块元素
+    -->
+
+    <!--
+        不希望某个元素因为其他元素浮动的影响而改变位置，可以使用clear属性清除浮动元素
+            clear
+                left    清除左侧浮动元素对当前元素的影响
+                right   清除右侧浮动元素对当前元素的影响
+                both    清除两侧浮动元素影响最大的一侧
+            浏览器会自动为元素添加了一个上外边距
+    -->
+
+    <!--
+            垂直布局就是用div的块元素，水平的布局就可以使用浮动来进行
+        通常父元素的高度是不指定的，因为是要根据内容大小来撑开父元素，此时使用浮动水平布局，
+        高度就会撑不开了，所以出现了高度塌陷的问题，导致父元素的高度丢失，布局会混乱
+        BFC 块级格式化环境
+            BFC是CSS中隐含的属性，可以为一个元素开启BFC，元素会变成独立的布局区域
+            开启了BFC的元素不会被浮动元素所覆盖，子元素和父元素外边距不会重叠，可以包含浮动的子元素
+        可以通过特殊的方式开启元素的BFC
+            1. 设置元素的浮动（不建议）
+            2. 将元素设置为行内块（不建议）
+            3. 将元素的overflow设置为一个非visible的值（常用auto或者是hidden）
+            4. display: flow-root
+    -->
+
+    <!--
+            解决高度塌陷问题
+        首先选择父元素的after伪类，然后添加一个content，使用clear清除浮动影响，使content处于浮动元素下方，
+        不过因为伪类增加的是行内元素，所以还需要使用display: block转为块元素。
+
+        常用的解决高度塌陷问题和外边距重叠问题的解法。
+            .clearfix::before, .clearfix::after {
+                content: '',
+                display: table,
+                clear: both
+            }
+
+    -->
+
+    <!--
+        定位是一种更加高级的布局手段，可以将元素放到页面的任意位置
+            使用position属性来设置定位
+                static      默认值，元素是静止的没有开启定位
+                relative    开启元素的相对定位
+                absolute    开启元素的绝对定位
+                fixed       开启元素的固定定位
+                sticky      开启元素的粘滞定位
+            偏移量(offset)
+                当元素开启了定位以后，可以通过偏移量来设置元素的位置
+                    top         定位元素和定位位置上边的距离
+                    bottom      定位元素和定位位置下边的距离
+                        垂直方向的位置由top和bottom来控制，通常用一个就行了
+                    left        定位元素和定位位置左边的距离
+                    right       定位元素和定位位置右边的距离
+                        水平方向的位置由left和right来控制，通常用一个就行了
+            1. 相对定位（relative）
+                相对定位是参照原位置进行定位的，即在偏移量中定位位置是原位置
+                1. 元素开启相对定位以后，如果不设置偏移量不会发生任何的变化
+                2. 相对定位不会使元素脱离文档流，不会改变元素的性质（块还是块，行内还是行内）
+            2. 绝对定位（absolute）
+                绝对定位是相对于其包含块进行定位的
+                    开启了绝对定位的包含块，就是离它最近的开启了定位的祖先元素，如果所有祖先元素都没开启定位
+                        那么包含块就是根元素（html元素）
+                1. 元素开启绝对定位以后，如果不设置偏移量元素的位置不会发生变化
+                2. 绝对定位会使元素会从文档流中脱离，改变元素的性质，行内变成块，块的高度被内容撑开
+                3. 绝对定位会使元素提升一个层级
+            3. 固定定位（fixed）
+                固定定位是一种绝对定位，大部分特点都和绝对定位一样
+                唯一不同的是固定定位永远参照于浏览器的视口进行定位
+                    视口与根元素不太一样，滚动条往下滑之后，固定定位的元素还是会在固定的位置
+                    而绝对定位的根元素位置就会在窗口中消失了
+                固定定位的元素不会随网页的滚动条滚动
+            4. 粘滞定位（sticky）（IE不支持，一般不用这种方式，采用js去实现）
+                粘滞定位和相对定位的特点基本一致
+                不同的是粘滞定位可以在元素到达指定的偏移量的位置之后将其固定
+    -->
+
+    <!--
+        开启了定位之后，可以通过z-index属性（整数）来指定元素的层级
+            层级越高，优先显示高层级的元素
+            层级相同，优先显示靠下边的元素
+            祖先的元素的层级再高也不会盖住后代元素
+    -->
+
+    <!--
+        水平方向的布局
+        margin-left + border-left + padding-left + width + padding-right + border-right + margin-right
+        当绝对定位之后，布局等式就需要添加left和right两个值
+            出现了过度约束之后，如果9个值中没有auto，就会自动调整left和right以使等式成立
+    -->
+
+    <!--
+        垂直方向的布局
+        margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom
+        之前是不需要满足的，当开启了绝对定位之后，会加上top和bottom两个值，等式必须满足
+
+        所以可以实现使元素垂直水平居中，将left,right,top,bottom都设置为0，然后margin设置为auto即可
+    -->
+
+
+
+
+
+
+
+
+</body>
+
+</html>

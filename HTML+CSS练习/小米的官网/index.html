@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城</title>
+    <!-- 引入重置样式表 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引入页面的样式表 -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入公共的样式表 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入阿里图片库 -->
+    <link rel="stylesheet" href="./css/iconfont.css">
+
+    <!-- 设置网站图标 -->
+    <link rel="icon" href="./img/favicon.ico">
+</head>
+
+<body>
+
+
+    <!-- 顶部导航条外部容器 -->
+    <div class="topbar-wrapper">
+        <!-- 创建内部容器 -->
+        <div class="topbar w clearfix">
+            <!-- 导航左边信息 -->
+            <ul class="service">
+                <li><a href="javascript:;">小米商城</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">MIUI</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">IOT</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">云服务</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">天星数科</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">有品</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">小爱开放平台</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">企业团购</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">资质证照</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">协议规则</a></li>
+                <li class="line"> | </li>
+                <li><a class="app" href="javascript:;">
+                        下载app
+                        <!-- 二维码弹出层 -->
+                        <div class="qrcode">
+                            <img src="./img/qrcode.png" alt="二维码">
+                            <span>小米商城APP</span>
+                        </div>
+                    </a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">Select Location</a></li>
+            </ul>
+
+            <!-- 导航最右边的购物车 -->
+            <ul class="shop-cart">
+                <li><a href="javascript:;">
+                        <i class="iconfont icon-gouwuchekong"></i>
+                        购物车(0)
+                    </a></li>
+                <div class="cart">
+                    购物车中还没有商品，赶紧选购吧！
+                </div>
+            </ul>
+
+            <!-- 导航右边信息 -->
+            <ul class="user-info">
+                <li><a href="javascript:;">登录</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">注册</a></li>
+                <li class="line"> | </li>
+                <li><a href="javascript:;">消息通知</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 头部外部容器 -->
+    <div class="header-wrapper">
+        <!-- 内部容器 -->
+        <div class="container w clearfix">
+            <!-- logo -->
+            <div class="header-logo">
+                <a href="https://www.mi.com/index.html">
+                    <img src="./img/logo.png" alt="小米logo">
+                </a>
+            </div>
+
+            <!-- 搜索框 -->
+            <div class="header-search">
+                <form class="search" action="#">
+                    <input class="search-input" value="Xiaomi" type="text">
+                    <button class="search-button">
+                        <i class="iconfont icon-sousuo"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- 中间导航条 -->
+            <div class="header-nav">
+                <ul class="nav">
+                    <li class="all-goods">
+                        <a class="tiecom" href="javascript:;"> 全部商品分类</a>
+                        <!-- 左侧导航菜单，其实不是下面的盒子的，其他页面触摸全部商品分类也是出现的。 -->
+                        <div class="left-menu">
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    手机
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    电视
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    笔记本 平板
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    家电
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    出行 穿戴
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    智能 路由器
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    电源 配件
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    健康 儿童
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    耳机 音箱
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+                            <div class="left-goods">
+                                <a href="javascript:;">
+                                    生活 箱包
+                                    <i class="iconfont icon-youjiantou"></i>
+                                </a>
+                            </div>
+
+                            <!-- 弹出层 -->
+                            <div class="left">
+                                <img src="./img/like.jpg" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> Xiaomi手机</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> Redmi手机</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 电视</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 笔记本</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 平板</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 家电</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 路由器</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 智能硬件</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 服务</a>
+                    </li>
+                    <li>
+                        <a class="goods" href="javascript:;"> 社区</a>
+                    </li>
+
+                    <!-- 弹出层 -->
+                    <div class="goods-info">
+                        <div class="info w">
+                            <div class="goods-img">
+                                <img src="./img/like.jpg" alt="">
+                                <br>
+                                <span>goods Name</span>
+                                <br>
+                                <span class="price">goods price</span>
+                            </div>
+                            <div class="goods-img">
+                                <img src="./img/like.jpg" alt="">
+                                <br>
+                                <span>goods Name</span>
+                                <br>
+                                <span class="price">goods price</span>
+                            </div>
+                            <div class="goods-img">
+                                <img src="./img/like.jpg" alt="">
+                                <br>
+                                <span>goods Name</span>
+                                <br>
+                                <span class="price">goods price</span>
+                            </div>
+                            <div class="goods-img">
+                                <img src="./img/like.jpg" alt="">
+                                <br>
+                                <span>goods Name</span>
+                                <br>
+                                <span class="price">goods price</span>
+                            </div>
+                            <div class="goods-img">
+                                <img src="./img/like.jpg" alt="">
+                                <br>
+                                <span>goods Name</span>
+                                <br>
+                                <span class="price">goods price</span>
+                            </div>
+                            <div>
+                                <img src="./img/like.jpg" alt="">
+                                <br>
+                                <span>goods Name</span>
+                                <br>
+                                <span class="price">goods price</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner容器,简约的banner -->
+    <div class="banner-wrapper">
+        <div class="banner w">
+            <img src="./img/banner.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- 侧边的工具栏 -->
+    <div class="back-top">
+        <div class="back">
+            <ul class="right-tool">
+                <li class="right-app">
+                    <a href="#">
+                        <i class="iconfont icon-shouji"></i>
+                    </a>
+                    <div class="right-qrcode">
+                        <img src="./img/qrcode.png" alt="二维码">
+                        <span>小米商城APP</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-gerenzhongxin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-baozhangfuwudan"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-rengongfuwu"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-gouwuchekong"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- 广告容器 -->
+    <div class="advert-wrapper w">
+        <ul class="shortcut">
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-clock"></i>
+                    保障服务
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-qiye"></i>
+                    企业团购
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-fma"></i>
+                    F码通道
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-line-simcardsimka-01"></i>
+                    米粉卡
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-yijiuhuanxin"></i>
+                    以旧换新
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-huafeichongzhi"></i>
+                    话费充值
+                </a>
+            </li>
+        </ul>
+
+        <ul class="advert">
+            <li>
+                <a href="#"></a> <img src="./img/advert1.jpg" alt="">
+            </li>
+            <li>
+                <a href="#"></a> <img src="./img/advert2.jpg" alt="">
+            </li>
+            <li>
+                <a href="#"></a> <img src="./img/advert3.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <!-- 商品页 -->
+    <div class="shopping">
+        <div class="long-advert w">
+            <img src="./img/advert4.webp" alt="">
+        </div>
+
+        <div class="shop w">
+            <div class="title">
+                <span>手机</span>
+                <a href="#">
+                    查看更多
+                    <i class="iconfont icon-youjiantou"></i>
+                </a>
+            </div>
+
+            <div class="cargo w">
+
+                <div class="first">
+                    <a href="#">
+                        <img src="./img/cargo1/1.webp" alt="">
+                    </a>
+                </div>
+                <div class="next">
+                    <ul class="clearfix">
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/2.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/3.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/4.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/5.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/6.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/7.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/8.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo1/9.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="shop w">
+            <div class="title">
+                <span>家电</span>
+                <div class="special">
+                    <a href="#"> 热门</a>
+                    <a href="#"> 电视影音</a>
+                </div>
+            </div>
+
+            <div class="cargo w">
+
+                <div class="first-special">
+                    <a href="#">
+                        <img src="./img/cargo2/1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/cargo2/2.webp" alt="">
+                    </a>
+                </div>
+                <div class="next">
+                    <ul class="clearfix">
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/3.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/4.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/5.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/6.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/7.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/8.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/9.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <img src="./img/cargo2/10.webp" alt="">
+                                <span>商品名字</span>
+                                <br>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <div>
+                                    <span>浏览更多</span>
+                                    <br>
+                                    <span>电视影音</span>
+                                </div>
+                                <i class="iconfont icon-youjiantou1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="shop w">
+            <div class="title">
+                <span>智能</span>
+                <div class="special">
+                    <a href="#"> 热门</a>
+                    <a href="#"> 安防</a>
+                    <a href="#">出行</a>
+                </div>
+            </div>
+
+            <div class="cargo w">
+
+                <div class="first-special">
+                    <a href="#">
+                        <img src="./img/cargo2/1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/cargo2/2.webp" alt="">
+                    </a>
+                </div>
+                <div class="next">
+                    <ul class="clearfix">
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/3.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/4.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/5.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/6.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/7.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/8.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/9.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <img src="./img/cargo2/10.webp" alt="">
+                                <span>商品名字</span>
+                                <br>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <div>
+                                    <span>浏览更多</span>
+                                    <br>
+                                    <span>电视影音</span>
+                                </div>
+                                <i class="iconfont icon-youjiantou1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="long-advert w">
+            <img src="./img/advert5.webp" alt="">
+        </div>
+
+        <div class="shop w">
+            <div class="title">
+                <span>搭配</span>
+                <div class="special">
+                    <a href="#"> 热门</a>
+                    <a href="#"> 耳机音响</a>
+                </div>
+            </div>
+
+            <div class="cargo w">
+
+                <div class="first-special">
+                    <a href="#">
+                        <img src="./img/cargo2/1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/cargo2/2.webp" alt="">
+                    </a>
+                </div>
+                <div class="next">
+                    <ul class="clearfix">
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/3.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/4.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/5.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/6.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/7.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/8.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/9.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <img src="./img/cargo2/10.webp" alt="">
+                                <span>商品名字</span>
+                                <br>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <div>
+                                    <span>浏览更多</span>
+                                    <br>
+                                    <span>电视影音</span>
+                                </div>
+                                <i class="iconfont icon-youjiantou1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="shop w">
+            <div class="title">
+                <span>配件</span>
+                <div class="special">
+                    <a href="#"> 热门</a>
+                    <a href="#"> 充电器</a>
+                </div>
+            </div>
+
+            <div class="cargo w">
+
+                <div class="first-special">
+                    <a href="#">
+                        <img src="./img/cargo2/1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/cargo2/2.webp" alt="">
+                    </a>
+                </div>
+                <div class="next">
+                    <ul class="clearfix">
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/3.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/4.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/5.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/6.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/7.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/8.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/9.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <img src="./img/cargo2/10.webp" alt="">
+                                <span>商品名字</span>
+                                <br>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <div>
+                                    <span>浏览更多</span>
+                                    <br>
+                                    <span>电视影音</span>
+                                </div>
+                                <i class="iconfont icon-youjiantou1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="shop w">
+            <div class="title">
+                <span>周边</span>
+                <div class="special">
+                    <a href="#"> 热门</a>
+                    <a href="#"> 出行</a>
+                </div>
+            </div>
+
+            <div class="cargo w">
+
+                <div class="first-special">
+                    <a href="#">
+                        <img src="./img/cargo2/1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/cargo2/2.webp" alt="">
+                    </a>
+                </div>
+                <div class="next">
+                    <ul class="clearfix">
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/3.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/4.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/5.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/6.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/7.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/8.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes">
+                            <a href="#">
+                                <img src="./img/cargo2/9.webp" alt="">
+                                <span>商品名字</span>
+                                <span>商品特点</span>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <img src="./img/cargo2/10.webp" alt="">
+                                <span>商品名字</span>
+                                <br>
+                                <span class="price">商品价格</span>
+                            </a>
+                        </li>
+                        <li class="cargoes-special">
+                            <a href="#">
+                                <div>
+                                    <span>浏览更多</span>
+                                    <br>
+                                    <span>电视影音</span>
+                                </div>
+                                <i class="iconfont icon-youjiantou1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="long-advert w">
+            <img src="./img/advert6.webp" alt="">
+        </div>
+        <div class="shop w">
+            <div class="title">
+                <span>视频</span>
+                <a href="#">
+                    查看更多
+                    <i class="iconfont icon-youjiantou"></i>
+                </a>
+            </div>
+
+            <div class="videos w clearfix">
+                <ul>
+                    <li class="video">
+                        <a href="#">
+                            <img src="./img/video/1.webp" alt="">
+                            <p>2021年春季新品发布会第一场</p>
+                        </a>
+                    </li>
+                    <li class="video">
+                        <a href="#">
+                            <img src="./img/video/2.webp" alt="">
+                            <p>Redmi 10X系列发布会</p>
+                        </a>
+                    </li>
+                    <li class="video">
+                        <a href="#">
+                            <img src="./img/video/3.webp" alt="">
+                            <p>小米10 青春版 发布会</p>
+                        </a>
+                    </li>
+                    <li class="video">
+                        <a href="#">
+                            <img src="./img/video/4.webp" alt="">
+                            <p>小米10 8K手机拍大片</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+
+</body>
+
+</html>
