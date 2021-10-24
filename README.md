@@ -1,3 +1,3 @@
-# HTML-CSS-
+# web-design
 
-练习记录。
+前端学习的一些笔记。

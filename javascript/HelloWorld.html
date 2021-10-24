@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var object = new Object();
+        object.name = "hello";
+        object.age = 18;
+        console.log(object)
+    </script>
+
+    <!--
+        数据类型，JS中一共有6中数据类型
+            1. String   字符串
+                - 使用双引号和单引号都可以，但是不要混用
+                - 用\进行转义
+            2. Number   数值
+                - 所有的数值都说Number类型，比如整数和浮点数
+                - Infinity表示正无穷，-Infinity表示负无穷，类型是number
+                - NaN是一个特殊的数字，表示不是数字，类型也是number
+            3. Boolean  布尔值
+                - 只有两个值，true和false
+            4. Null     空值
+                - 该类型就只有一个值，null，表示空对象，类型其实是Object
+            5. Undefined    未定义
+                - 该类型就只有一个值，undefined, 表示未定义
+                - 声明变量并没有赋值，值就算undefined,类型是undefined
+            6. Object   对象（引用数据类型）
+            7. 使用typeof 变量  来检查数据类型
+    -->
+
+    <!--
+        对象
+            - 创建对象
+                var obj = new Object();
+            - 使用对象字面量来创建一个对象
+                var obj = { name: "hello", age: 18; };
+            - 属性可以自己加，通过对象名的属性来设置
+            - 其中没有的属性，值默认是undefined
+            - 使用delete来删除属性，比如    delete obj.name
+            - 通过  in  运算符，检查对象中是否有该属性
+                比如    name in obj
+            - 通过属性名来获取对象中的值，obj[n]
+    -->
+
+    <!--
+        构造函数
+            - 之前都是使用Object()这个构造函数构造对象
+            - 构造函数与普通函数的调用方式不同,构造函数还需要使用new
+            - 构造函数没设置返回值也会返回一个对象
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var per = new Person();
+    -->
+
+    <!--
+        原型对象
+            - 每一个创建的函数,解析器都会想函数中添加一个prototype对象
+            - 如果函数作为普通函数调用,原型对象就没有任何作用
+            - 如果函数作为构造函数调用,所有创建的对象都会有一个隐含的属性指向原型对象
+            - 可以通过_proto_来访问该属性
+            - 原型对象的概念与类的概念类似
+            - 向原型对象中添加属性
+                Person.prototype.name = "Hello World!";
+    -->
+
+    <!--
+        函数
+            - 函数也是对象
+            - 创建一个函数（不推荐这种方式，容易和对象搞乱）
+                var fun = new Function();
+            - 函数声明（有名函数）
+                function fun() {  console.log("Hello World!");  }
+            - 函数声明（匿名对象,注意后面的逗号）
+                var fun = function() { console.log("Hello World!"); };
+            - 使用typeof检查该对象，返回一个function
+            - 使用return返回值，声明不用声明返回类型
+            - 立即执行函数(匿名函数)
+                ( function() { console.log("Hello World!")} ) ();
+                前面的括号是为了让匿名函数不报错，后面的括号表示匿名函数的调用
+    -->
+
+    <!--
+        枚举对象中的属性
+            for (var n in obj) {
+                // n是属性名
+                console.log(n);
+                console.log(obj[n])
+            }
+    -->
+
+    <!--
+        关于this
+            直接在script使用this,this的对象是window,默认是隐藏的
+            对象内的this,其实表示的当前对象
+    -->
+
+    <!--
+        数组
+            - 创建一个数组
+                var arr = new Array();
+                var arr = new Array(n);
+            - 添加元素
+                arr[0] = 10;
+            - 不存在的索引会返回undefined
+            - 使用字面量来创建数组
+                var arr = [];
+            - 数组操作的四个常用方法
+                - push()方法,向数组的末尾添加一个或多个元素,返回数组的长度
+                - pop()方法,删除数组的最后一个元素,返回删除的元素
+                - unshift()方法,向数组开头添加一个或多个元素,返回数组的长度
+                - shift()方法,删除数组第一个元素,返回删除的元素
+            - 数组的遍历
+                for (var i = 0; i < arr.length; i++) {
+                    console.log(arr[i]);
+                }
+            - forEach()方法,用于迭代遍历数组,需要一个函数作为参数
+                arr.forEach(function(n) {
+                    // n就是数组的值
+                    console.log(n);
+                });
+                这个参数属于一个回调函数,浏览器会在回调函数中传递三个参数
+                    - 第一个参数就是当前正在遍历的数组的值
+                    - 第二个参数就是当前正在遍历的数组的索引
+                    - 第三个参数就是当前正在遍历的数组对象
+                IE8以下的浏览器不支持forEach()方法
+            - slice()方法,从已有的数组中提取制定元素
+                arr.slice(start, end);
+            - splice()方法,删除数组中的制定元素
+                arr.splice(start, end);
+            - reverse()方法,倒置数组
+    -->
+
+    <!--
+        DOM 文档对象模型
+            节点    构成HTML文档最基本的单元
+                - 文档节点  整个HTML文档
+                - 元素节点  HTML文档中的HTML标签
+                - 属性节点  元素的属性
+                - 文本节点  HTML标签中的文本内容
+            浏览器已经为我们提供了文档节点,代表了整个网页   document
+            事件    用户和浏览器的交互行为，比如点击按钮
+    -->
+
+    <!--
+        因为页面是从上向下加载，所以操作写在上面，很容易出现找不到元素的错误
+        onload事件是代表页面加载完成之后触发，所以编写操作时可以使用window绑定该事件
+            window.onload = function() {
+                // ....dom操作
+            };
+    -->
+
+    <!--
+        查询dom对象
+            获取元素节点（document对象的方法）
+                - getElementById()              通过id属性来获取一个元素节点属性
+                - getElementsByTagName()        通过标签名获取一组元素节点属性，如div
+                - getElementsByName()           通过name属性来获取一组元素节点对象，比如表单
+
+            获取元素节点的子节点（通过节点的方法）
+                - getElementsByTagName()        返回当前节点的指定标签名后代节点
+                - childNodes属性                表示当前节点的所有子节点
+                - firstChild属性                表示当前节点的第一个子节点
+                - lastChild属性                 表示当前节点的最后一个子节点
+
+            获取父节点和兄弟节点（通过节点的方法）
+                - parentNode属性                表示当前节点的父节点
+                - previousSibling属性           表示当前节点的前一个兄弟节点
+                - nextSibling属性               表示当前节点的后一个兄弟节点
+
+            获取元素的class属性节点（document对象的方法）
+                getElementByClassName()         通过class属性来获取节点，但是不支持IE8以下是不支持的
+
+            获取选择器选中的节点（document对象的方法）
+                querySelector()                 通过css选择器来获取节点，不过它只能返回第一个符合的节点
+                querySelectorAll()              通过css选择器来获取节点，能获取所有符合的元素，返回一个数组
+
+            document中有一些特殊属性，保存的是特殊标签的引用
+                document.body
+                document.html
+                document.all                    表示页面的所有元素，等同于document.getElementsByTagName("*")
+
+
+
+        修改dom对象
+            - createElement()                   通过标签名来创建一个元素节点，通过document对象调用
+            - createTextNode()                  通过文本内容创建一个文本节点，通过document对象调用
+            - appendChild()                     向一个父节点中添加一个子节点，通过父节点的对象调用
+            - insertBefore()                    在指定的子节点前面插入新的子节点，通过父节点的对象调用
+                                                    两个参数，第一个代表新节点，第二个代表指定节点
+            - replaceChild()                    用新的节点代替旧的节点，通过父节点的对象调用
+            - removeChild()                     删除一个子节点，通过父节点的对象调用
+            - innerHTML属性                     读取节点的HTMl代码，通过节点对象调用
+
+        修改dom对象的样式
+            object.style.[styleName]
+                - 修改节点的style属性的样式名，从而修改样式
+                - 如果样式名有 — 号，所以要去掉并改为驼峰，比如backgroundColor
+                - 这里的修改的是内联样式，优先级很高，如果样式中存在!important，则该样式无法修改成功
+                - 这里获取的样式是内联样式，所以无法读取到原本css设置的样式，只能读取到内联样式
+            object.currentStyle.[styleName]
+                - 获取当前元素显示的样式，即是生效的样式
+                - 只有IE浏览器支持，其他浏览器不支持
+            getComputedStyle()
+                - 获取元素当前生效的样式
+                - 这个方法是window方法，可以直接调用
+                - 返回一个对象，对象中封装了所有样式
+                - 获取的样式没有设置时，会获取到真实的值，而不是auto这种默认值
+                - 不支持IE8以下的浏览器
+            自定义的getStyle()方法
+                function getStyle(obj, name) {
+                    if (window.getComputedStyle) {
+                        return getComputedStyle(obj, null)[name];
+                    }
+                    return obj.currentStyle[name]
+                }
+        一些常用的方法
+            获取可见高度和可见宽度
+                - clientWidth属性       返回可见宽度
+                - clientHeight属性      返回可见高度
+                - 返回的是数值，不带单位
+                - 获取元素的内容区和内边距
+                - 这两个属性是只读的，不能修改
+            获取元素的高度和宽度
+                - offsetWidth属性       获取宽度
+                - offsetHeight属性      获取宽度
+                - 获取元素的整个值，包括内容区，内边距和边框
+            获取当前元素的定位父元素
+                - offsetParent属性
+                - 获取离当前元素最近的开启了定位的祖先元素
+            获取定位偏移量
+                - offsetTop属性             返回当前元素相对于定位元素的垂直偏移量
+                - offsetLeft属性            返回当前元素相对于定位元素的水平偏移量
+    -->
+
+    <!--
+        事件的冒泡
+            - 当子元素的事件触发时，父元素的相同事件也会随之触发
+
+        事件的委派
+            - 假设为元素绑定事件，这样的话新添加的元素就绑定不到这个事件了
+            - 所以希望只绑定一次事件，就能为所有该元素绑定，而不是每一个元素都要单独绑定，即使元素是后添加的
+            - 所以可以将事件绑定给父元素，每次点击子元素，就通过事件的冒泡触发父元素的点击函数（即使子元素没有点击函数也会触发）
+            - 但是给父元素添加绑定事件可能会导致范围扩大，所以可以在事件中加个判定点击的对象是否正确在触发
+            - 通过event.target属性来返回点击的对象来判断是否是正确的点击对象
+
+        事件的绑定
+            - 使用  对象.事件 = 函数    这种形式绑定函数，不能叠加，后来的绑定会覆盖前面的绑定
+            - 通过  object.addEventListener()   这个方法绑定可以重复绑定事件
+                - 第一个参数，事件的字符串，去掉on
+                - 第二个参数，回调函数，当事件触发时该函数会被调用，绑定的函数
+                - 第三个参数，是否在捕获阶段触发事件，一个布尔值，一般用false
+                - 先绑定的触发
+                - 不支持IE8以下的浏览器
+            - 通过  attachEvent()
+                - 第一个参数，事件的字符串，去掉on
+                - 第二个参数，回调函数
+                - 也是重复绑定，不过是后绑定的先触发
+
+        事件的传播
+            - 传播指的就是冒泡，这里探讨的是传播的顺序
+            - 微软公司认为传播是由内到外传播，即先执行当前元素的事件，在执行父元素的事件
+            - 网景公司认为传播是由外岛内传播
+            - W3C综合两个公司，将事件传播分成了三个阶段
+                1. 捕获阶段
+                    点击了当前事件后，从最外层元素向目标元素进行对事件的捕获，找到触发事件
+                        的父元素，但是此时是不会触发事件的
+                2. 目标阶段
+                    从外向内捕获到当前元素，捕获结束，开始触发当前元素的事件
+                3. 冒泡阶段
+                    当前触发结束后，从内到外开始冒泡触发每个捕获到的父元素的事件
+            - 如果希望在捕获阶段执行事件，就可以将addEventListener()方法的第三个参数改为true，不过一般是false
+            - IE8及以下的浏览器没有捕获阶段
+    -->
+
+
+
+</body>
+</html>
