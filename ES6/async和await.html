@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async和await</title>
+</head>
+<body>
+    <!-- async和await两种语法结合可以让异步代码像同步代码一样 -->
+
+    <!--
+        async函数
+            - 返回值为promise对象
+            - async function fn() {}
+    -->
+
+    <!--
+        await表达式
+            - await必须卸载async函数中
+            - await右侧的表达式一般为promise对象
+            - await返回的是promise成功的值
+            - await的promise失败了，就会抛出异常，需要通过try..catch捕获异常
+    -->
+    <!-- async和await结合的案例 -->
+    <script>
+        const p1 = new Promise((resolve, reject) => {
+            resolve("成功的promise");
+        });
+
+        // await要放在async函数内
+        async function fn1() {
+            // 用await来修饰一个promise对象，用来返回一个成功的值
+            let res = await p1;
+            console.log(res);
+        }
+        fn();
+
+
+        // 失败的情况
+        const p2 = new Promise((resolve, reject) => {
+            reject("失败的promise");
+        });
+
+        // 失败的Promise要捕获异常
+        async function fn2() {
+            try {
+                let res = await p;
+                console.log(res);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+    </script>
+
+    <!-- async和await结合发送AJAX请求 -->
+
+    <script>
+        // 发送一个AJAX请求，返回结果的promise对象
+        function sendAJAX(url) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', url);
+                xhr.send();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            // 如果成功
+                            resolve(x.response);
+                        } else {
+                            reject(x.status);
+                        }
+                    }
+                };
+            });
+        };
+
+        // 使用then测试
+        sendAJAX('http://localhost:8000/hello').then(value => {
+            console.log(value);
+        }, reason => {
+
+        });
+
+        // 使用await测试
+        async function fn() {
+            let res = await sendAJAX('http://localhost:8000/hello');
+            console.log(res);
+        }
+
+    </script>
+</body>
+</html>

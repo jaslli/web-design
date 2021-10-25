@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初始Vue</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!--
+        容器与Vue实例是一一对应的
+    -->
+
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h1>hello {{name}}</h1>
+    </div>
+
+    <script>
+        // 阻止vue在启动生成时生成生产提示
+        Vue.config.productionTip = false;
+        // 创建Vue实例
+        new Vue({
+            // el用于指定Vue实例为那个容器服务，值通常为css选择器字符
+            // 也可以写成   el:document.getElementById('root');
+            el: '#root',
+            // data用于存储数据，数据供el所指定的容器去使用
+            data: {
+                name: 'yww'
+            }
+        })
+    </script>
+</body>
+</html>

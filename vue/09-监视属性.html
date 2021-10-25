@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>监视属性</title>
+    <script src="../js/vue.js"></script>
+
+</head>
+<body>
+    <div id="root">
+        <div>今天的天气很{{whether}}</div>
+        <button @click='change'>点击切换天气</button>
+    </div>
+
+    <script>
+        // 第一种监视属性的实现，使用vue实例中的watch属性
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                whether: '炎热'
+            },
+            computed: {
+                comWhether() {
+                    return this.whether === '炎热' ? '寒冷' : '炎热';
+                }
+            },
+            methods: {
+                // 函数方式实现的
+                change() {
+                    this.whether = this.comWhether;
+                }
+            },
+            // 监视属性，既能监视data中的属性，也能监视计算属性
+            watch: {
+                // 初始化时让调用handler函数
+                immediate: true,
+                whether: {
+                    // 当whether被改变时，会执行handler这个函数
+                    // handler默认有两个参数，一个旧值，一个修改后的值
+                    handler(newValue, oldValue) {
+                        console.log("当前的天气从" + oldValue + "变为了" + newValue);
+                    }
+                }
+            }
+        });
+
+
+
+
+
+        // 第二种监视属性的实现
+        vm.$watch('whether', {
+            handler(newValue, oldValue) {
+                console.log("当前的天气从" + oldValue + "变为了" + newValue);
+            }
+        })
+    </script>
+</body>
+</html>

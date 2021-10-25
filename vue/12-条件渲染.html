@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        /* 基础样式 */
+        #root {
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            margin: 20px auto;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!--
+        v-if
+            - 适用于切换频率较低的场景
+            - 不展示的DOM元素会直接被移除
+            - v-if可以和 v-else-if, v-else一起使用，不过语句必须连在一起
+
+        v-show
+            - 适用于切换频率较高的场景
+            - v-show修饰的元素只是给元素增加了display:none;的样式，不是直接移除
+    -->
+
+    <div id="root">
+        <!-- 使用v-show做条件渲染 -->
+        <span v-show="info1">hello {{name}}</span>
+        <button @click="infoShow1">点击隐藏/显示</button>
+    </div>
+
+    <div id="root">
+        <!-- 使用v-if做条件渲染 -->
+        <span v-if="info1 === true">hello {{name}}</span>
+        <!-- v-else-if做多判断 -->
+        <span v-else-if ="info1 === false">hello {{name}}</span>
+        <!-- v-else是不需要值的 -->
+        <span v-else>hello {{name}}</span>
+        <button @click="infoShow1">点击隐藏/显示</button>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#root",
+            data: {
+                name: "yww",
+                info1: false
+            },
+            methods: {
+                infoShow1() {
+                    this.info1 = !this.info1
+                }
+            }
+        })
+    </script>
+</body>
+</html>

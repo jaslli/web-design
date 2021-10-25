@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST请求案例</title>
+</head>
+
+<style>
+    #result {
+        border: 1px solid red;
+        height: 500px;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+</style>
+
+<body>
+
+
+    <div id="result"></div>
+
+
+    <script>
+        const res = document.getElementById('result');
+        res.addEventListener("mouseover", function() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST','http://127.0.0.1:8000/server');
+            // 设置请求头
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            // 可以设置请求体参数
+            xhr.send('username=yww&password=yww');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        res.innerHTML = xhr.response;
+                    }
+                }
+            };
+        });
+
+
+        /**
+            JSON的输出(假设响应体是一个对象)
+            1. 手动对数据进行转换
+                let data = JSON.parse(xhr.response);
+            2. 自动转换
+                xhr.responseType = 'json';
+        */
+
+    </script>
+
+</body>
+</html>

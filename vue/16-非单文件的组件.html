@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非单文件组件的基本使用</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!--
+        非单文件组件表示不知包含一个组件
+            1. 创建组件
+            2. 注册组件
+                - 局部注册  在实例中使用components的属性给组件注册
+                - 全局注册  使用Vue.component('组件名'， 创建的组件名);
+            3. 使用组件标签
+    -->
+
+
+    <div id="root">
+        <!-- 使用组件 -->
+        <school></school>
+        <hr>
+        <student></student>
+    </div>
+
+    <script>
+
+        // 创建school组件
+        const school = Vue.extend({
+            // 这里不能写el，因为所有的组件最后都会有一个vm统一管理，由vm决定为谁服务
+            // el: '#root',
+            // data一定要写函数式，不然会报错，避免冲突
+            // data: {
+            //     schoolName: '学校',
+            //     address: '中国',
+            // }
+            data() {
+                return {
+                    schoolName: '学校',
+                    address: '中国'
+                }
+            },
+            // template是代表了组件的html结构,用一个div包括起来，使用``包括起来
+            template: `
+                <div>
+                    <h2>学校名称： {{schoolName}}</h2>
+                    <h2>学校地址： {{address}}</h2>
+                </div>
+            `,
+        })
+
+        // 创建student组件
+        const student = Vue.extend({
+            data() {
+                return {
+                    studentName: 'yww',
+                    age: 20
+                }
+            },
+            template: `
+                <div>
+                    <h2>学生姓名： {{studentName}}</h2>
+                    <h2>学生年龄： {{age}}</h2>
+                </div>
+            `,
+        })
+
+        // vm实例
+        new Vue({
+            el: '#root',
+            components: {
+                // 局部注册
+                // 将上述组件注册到vm中，components的属性才是真正调用的名字
+                school: school,
+                student: student
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板语法</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+
+    <div id="root">
+        <!--使用双花括号进行文本插值-->
+        <h3>Hello {{name}}</h3>
+
+        <!-- 使用v-bind进行属性的绑定，用双花括号是报错的 -->
+        <a v-bind:href="url">HelloWorld</a>
+        <!-- v-bind简写为 :  -->
+        <a :href="url"></a>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'yww',
+                url: "http://www.baidu.com"
+            }
+        })
+    </script>
+</body>
+</html>

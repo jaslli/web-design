@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性</title>
+    <script src="../js/vue.js"></script>
+
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="root">
+        输入姓<input type="text" v-model="firstName"> <br><br>
+        输入名<input type="text" v-model="lastName"> <br><br>
+        <!-- 1. 插值语法来实现 -->
+        使用插值实现获得的全名为  <span>{{firstName}} - {{lastName}}</span> <br><br>
+        <!-- 2. 使用函数来实现 -->
+        使用函数实现获得的全名为  <span>{{fullName()}}</span> <br><br>
+        <!-- 3. 使用计算属性来实现 -->
+        使用计算属性实现获得的全名为  <span>{{fullName}}</span>
+
+        <!--
+            data中的属性是属于data的，使用vm._data.firstName来获取
+            计算属性是属于vue实例的，使用vm.fullName来获取
+        -->
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                firstName: '张',
+                lastName: '三'
+            },
+            methods: {
+                // 在firstName或者是lastName修改了之后，vue就会重新解析模板，所以返回值也会跟着变化的
+                fullName() {
+                    return this.firstName + ' - ' + this.lastName;
+                }
+            },
+            // 计算属性放的地方
+            computed: {
+                fullName: {
+                    // 当有人读取的fullName的属性时，就会调用这个get获得里面的返回值来返回
+                    // 如果使用函数的方式实现，获取一次值就会调用一次函数，而计算属性只赖于这个get函数的调用
+                    /**
+                     * get什么时候调用？
+                     * 1. 获取fullName时会调用
+                     * 2. 当所依赖的数据发生变化时会调用（如firstName和lastName发生变化）
+                     */
+                    get() {
+                        return this.firstName + ' - ' + this.lastName;
+                    },
+                    // 当fullName被修改时才会被修改
+                    set(value) {
+                        let arr = value.split('-');
+                        this.firstName = arr[0];
+                        this.lastName = arr[1];
+                    }
+                },
+
+                // 简写,直接当一个函数写，里面是get函数，省略了set函数
+                fullName1: function() {
+                    return this.firstName + ' - ' + this.lastName;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

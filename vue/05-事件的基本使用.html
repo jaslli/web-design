@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的基本使用</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <!-- v-on绑定一个事件,事件为click，执行的回调函数为showInfo -->
+        <button v-on:click="showInfo">点击提示信息</button>
+        <!-- 可以简写为这样 -->
+        <button @click="showInfo">点击提示信息</button>
+
+        <!-- 想要传参数就直接括号传 -->
+        <!-- 不过这样传参的话就丢失了event的对象,要想不丢失就需要传一个$event参数 -->
+        <button @click="showInfo2(666)">点击提示信息</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'yww'
+            },
+            methods: {
+                showInfo(event) {
+                    alert("Hello World!");
+                    console.log(event.target.innerText);
+                },
+                showInfo(number) {
+                    alert(number);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

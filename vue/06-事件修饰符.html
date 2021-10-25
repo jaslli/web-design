@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件修饰符</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!--
+        Vue中的事件修饰符有6个
+            1. prevent  阻止默认事件
+            2. stop     阻止事件冒泡
+            3. once     事件只触发一次
+            4. capture  使用事件的捕获模式
+            5. self     只用event.target是当前操作的元素才触发事件
+            6. passive  事件的默认行为立即执行，无需等待事件回调执行完毕
+        事件修饰符是可以链式调用的，就比如这个，即阻止了默认事件也阻止了冒泡
+            <a href="http://www.baidu.com" @click.prevent.stop="showInfo">点击不跳转到百度<a>
+        这两个修饰符stop和prevent可以互换，只是哪个先发挥作用而已
+    -->
+
+    <div id="root">
+        <!-- 这里的a标签正常执行顺序是，点击按钮，弹出提示框，然后就跳转到百度 -->
+        <a href="http://www.baidu.com" @click="showInfo">点击跳转到百度<a>
+        <!-- 跳转到百度就是默认事件，要想弹出提示框，然后不跳转就需要阻止默认事件的发生 -->
+        <a href="http://www.baidu.com" @click.prevent="showInfo">点击不跳转到百度<a>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'yww'
+            },
+            methods: {
+                showInfo() {
+                    alert("Hello World!");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

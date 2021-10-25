@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <!-- 简单的promise案例 -->
+    <script>
+        // 实例化 Promise对象，resolve表示成功会执行的回调函数
+        const p = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                let data = '数据获取成功';
+                resolve(data);
+            })
+        }, 1000);
+
+        // 实例化 Promise对象，reject表示失败会执行的回调函数
+        const p = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                let data = '数据获取失败';
+                reject(data);
+            })
+        }, 1000);
+
+        // 用then的方法指定回调函数，成功就会执行第一个，失败就会执行第二个
+        p.then(function(value) {
+            console.log(value);
+        }, function(reason) {
+            console.error(reason);
+        })
+    </script>
+
+
+    <!-- 通过promise封装AJAX -->
+    <script>
+        const p = new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:8000/hello");
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(xhr.response);
+                    } else {
+                        reject(xhr.status);
+                    }
+                }
+            }
+        })
+
+        // 指定回调
+        p.then(function(value) {
+            console.log(value);
+        }, function(reason) {
+            console.error(reason);
+        })
+    </script>
+
+    <!--
+        then方法的返回结果是Promise对象，对象状态由回调函数的执行结果决定
+        1. 如果回调函数返回的结果是非promise类型的属性，状态为成功，返回值为对象的成功的值
+            - 状态为resolved,值为成功返回的值
+            - 失败的状态为rejected, 值为错误
+        2. 抛出错误
+            throw new Error('出错');
+            状态为rejected,值为错误信息。
+    -->
+
+</body>
+</html>

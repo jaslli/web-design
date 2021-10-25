@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据绑定</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+
+    <div id="root">
+        <div id="root">
+            <!-- v-band是单向的数据绑定 -->
+            单向数据绑定：<input type="text" v-bind:value="name"><br>
+            <!-- v-model是双向的数据绑定 -->
+            <!-- v-model只能用于表单类的元素（输入类的元素） -->
+            双向的数据绑定：<input type="text" v-model:value="name"><br>
+
+            <!-- 两种方式的简写 -->
+            单向数据绑定：<input type="text" :value="name"><br>
+            双向的数据绑定：<input type="text" v-model="name"><br>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'yww'
+            }
+        })
+    </script>
+</body>
+</html>

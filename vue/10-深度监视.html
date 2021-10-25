@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度监视</title>
+    <script src="../js/vue.js"></script>
+
+</head>
+<body>
+    <div id="root">
+        <div>当前的a的值为{{numbers.a}}</div><br><br>
+        <button @click='numbers.a++'>点击使a自增</button><br><br>
+        <div>当前的a的值为{{numbers.b}}</div><br><br>
+        <button @click='numbers.b++'>点击使b自增</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                numbers: {
+                    a:1,
+                    b:2
+                }
+            },
+            watch: {
+                // 只有开启了deep深度监视，才能监视到numbers内部值得改变
+                deep: true,
+                // 多级结构中需要加单引号表示，不然会报错
+                'numbers.a': {
+                    handler() {
+                        console.log('a的值改变了');
+                    }
+                },
+                'numbers.b': {
+                    handler() {
+                        console.log('b的值改变了');
+                    }
+                },
+                // 监视numbers这个对象，只会当numbers的对象改变了才算改变，里面的值的变化是检测不到的
+                numbers: {
+                    handler() {
+                        console.log('numbers中的值改变了')
+                    }
+                }
+            }
+        });
+
+
+        // 简写配置中的简写
+        const p = new Vue({
+            el: '#root',
+            data: {
+                name : 'yww'
+            },
+            watch: {
+                // 当不设置其他属性,只有这个handler函数，就可以简写监视函数
+                name(oldValue,newValue) {
+                    console.log(oldValue);
+                    console.log(newValue);
+                }
+            }
+        });
+
+        p.$watch('name', function(oldValue,newValue) {
+            console.log(oldValue);
+            console.log(newValue);
+        });
+    </script>
+</body>
+</html>

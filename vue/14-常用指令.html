@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用指令</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!--
+        之前提到的指令：
+            - v-bind            单向绑定属性，可以简写为    :xxx
+            - v-model           双向数据绑定, 可以简写为    v-model=''
+            - v-for             遍历数组，对象，字符串，需要配合 :key 使用
+            - v-on              绑定事件监听，可以简写为    @
+            - v-if              条件渲染，动态控制节点是否存在
+            - v-show            条件渲染，动态控制节点是否隐藏
+        v-text                  使用值替换掉文本的内容，但是不支持html代码
+        v-html                  使用值替换掉文本的内容，可以支持html代码
+        v-cloak                 没被渲染的就会出现该属性，渲染了就删除了该属性
+        v-once                  v-on的节点在第一次渲染之后就称为了静态内容了，
+                                    以后数据的改变都不会改变v-once所在结构的更新了
+        v-pre                   让vue跳过所在节点的编译，就是vue不渲染当前代码，用于加快编译速度
+    -->
+
+    <div id="root">
+        <!-- 通过插值表达式实现插入文本 -->
+
+        <span>{{str}}</span>
+        <!-- 通过v-text实现插入文本 -->
+        <span v-text="str"></span>
+
+        <!-- 通过v-html实现插入文本 -->
+        <span v-html="str"></span>
+
+        <!--
+            这个属性主要是标明是否被vue渲染，起初vue.js没有被加载的时候，
+            会显示{{str}},v-cloak也会存在，当加载完毕，显示的是str的值，v-cloak
+            就不存在了，所以一般配合css使用，让没被渲染的元素直接不显示。
+            主要是用于解决数据的闪动问题。
+        -->
+        <span v-cloak>{{str}}</span>
+        <!-- 配合这段CSS让没加载的数据隐藏 -->
+        <style>
+            [v-cloak] {
+                display: none;
+            }
+        </style>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                str: 'yww'
+            }
+        })
+    </script>
+</body>
+</html>

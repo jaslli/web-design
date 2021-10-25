@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绑定样式</title>
+    <script src="../js/vue.js"></script>
+
+    <style>
+        /* 基础样式 */
+        .basic {
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            margin: 20px auto;
+        }
+        /* 三个背景颜色 */
+        .background1 {
+            background-color: blue;
+        }
+
+        .background2 {
+            background-color: red;
+        }
+
+        .background3 {
+            background-color: aqua;
+        }
+
+        /* 圆角样式 */
+        .style1 {
+            border-radius: 30px;
+        }
+        /* 字体颜色 */
+        .style2 {
+            color:blueviolet;
+        }
+        /* 字体大小 */
+        .style3 {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+
+        <!-- 绑定class样式--字符串写法，适用于样式的类名不确定，需要动态绑定 -->
+        <div class="basic" :class="mood">
+            <span>hello {{name}}</span>
+        </div>
+
+        <!-- 绑定class样式--数组写法，适用于样式个数不确定的情况 -->
+        <div class="basic" :class="classArr">
+            <span>hello {{name}}</span>
+        </div>
+
+        <!-- 绑定class样式--对象写法，要绑定的个数和名字确定，但是需要动态禁止 -->
+        <div class="basic" :class="classObj">
+            <span>hello {{name}}</span>
+        </div>
+
+        <!-- 绑定内联样式,使用对象来帮顶，数组其实也是可以的 -->
+        <div class="basic" :style="styleObj">
+            <span>hello {{name}}</span>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#root",
+            data: {
+                name: "yww",
+                mood: "background3",
+                classArr: ["background3","style1","style2","style3"],
+                // 对象内是类名，true表示需要添加的类，false表示禁止的类
+                classObj: {
+                    style1: true,
+                    style2: true,
+                    style3: false
+                },
+                styleObj: {
+                    fontSize: "40px",
+                }
+            }
+        })
+    </script>
+</body>
+</html>

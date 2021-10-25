@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue生命周期</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!--
+        官网提供了一张生命周期的图，同目录下的lifecycle.png
+            里面的红色框的就是生命周期函数
+
+        挂载流程：
+            1. beforeCreate
+            2. create
+            3. beforeMount
+            4. mounted
+        更新流程：
+            1. beforeUpdate
+            2. Updated
+        销毁流程：  （调用vm.$destroy()函数之后，就会完全销毁一个Vue实例）
+            1. beforeDestroy
+            2. destroy
+
+    -->
+
+    <div id="root">
+        <span>当前的n值是：   {{n}}</span>
+        <button @click="add">点击n自增</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                n: 1
+            },
+            methods: {
+                add() {
+                    this.n++;
+                }
+            },
+            // 此时数据代理还没开始，无法通过vm获取到data中的数据和methods中的方法
+            beforeCreate() {},
+            // 可以通过vm访问到data中的数据和methods的方法
+            create() {},
+            // 挂载之前，页面显示的是没被渲染的内容
+            beforeMount() {},
+            // vue挂载之后，页面已经被vue编译了
+            mounted() {},
+
+            // 当数据被更新时候，页面没被渲染
+            beforeUpdate() {},
+            // 数据被更新，页面被渲染之后
+            Updated() {},
+
+            // 即将要销毁实例之前，一般是一些收尾工作
+            beforeDestroy() {},
+            // 销毁了实例之后
+            destroy() {},
+        })
+    </script>
+</body>
+</html>
