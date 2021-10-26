@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-cli的使用</title>
+</head>
+<body>
+    <!--
+        Vue-cli的使用
+            - 安装
+                npm install -g @vue/cli
+                # 或者
+                yarn global add @vue/cli
+            - 升级
+                npm update -g @vue/cli
+                # 或者
+                yarn global upgrade --latest @vue/cli
+            - 创建新的项目
+                vue create [项目名]
+                # 或者是图形界面的创建
+                vue ui
+            - 运行
+                yarn serve
+                # 或者
+                npm serve
+    -->
+
+    <!--
+        脚手架中是没有配置文件的，因为配置文件被隐藏了
+            所以可以通过下面的命令打印配置（只是打印，修改了并不会生效）
+            vue inspect > output.js
+        要想修改配置文件，可以在项目根目录(package.json同级)下创建一个vue.config.js文件
+            然后修改配置，具体有哪些配置可以参考官网
+            https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE
+    -->
+
+
+    <!--
+
+        脚手架的基本结构
+
+        ├── node_modules        依赖
+        ├── public
+        │ ├── favicon.ico       页签图标
+        │ └── index.html        主页面
+        ├── src
+        │ ├── assets            存放静态资源
+        │ │ └── logo.png        图片
+        │ │── component         存放组件
+        │ │ └── HelloWorld.vue
+        │ │── App.vue           汇总所有组件
+        │ │── main.js           入口文件
+        ├── .gitignore          git版本管制忽略的配置
+        ├── babel.config.js     babel 的配置文件
+        ├── package.json        应用包配置文件
+        ├── README.md           应用描述文件
+        ├── package-lock.json   包版本控制文件
+    -->
+</body>
+</html>
