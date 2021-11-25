@@ -564,13 +564,11 @@ export default {
 <script>
 export default {
     name: 'Home',
-    methods: {
-        activated() {
-            console('Home组件被激活了')
-        },
-        deactivated() {
-            console('Home组件失去激活')
-        }
+    activated() {
+        console('Home组件被激活了')
+    },
+    deactivated() {
+        console('Home组件失去激活')
     }
 }
 </script>
